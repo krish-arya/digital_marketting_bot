@@ -88,10 +88,11 @@ if handle:
                 thumbnail = candidates[0].get("url", "") if candidates else ""
 
             html = f"""
-            <div style='background: #fff; border-radius: 20px; padding: 20px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);'>
-                <div style='margin-bottom: 15px;'>
+            <div style='background: #fff; border-radius: 20px; padding: 20px; margin-bottom: 20px;
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.1); font-family: sans-serif;'>
+                <div style='margin-bottom: 10px;'>
                     <a href='{video_url}' target='_blank'>
-                        <img src='{thumbnail}' style='width: 100%; border-radius: 15px;' onerror="this.style.display='none'">
+                        <img src='{thumbnail}' style='width: 100%; max-height: 200px; object-fit: cover; border-radius: 15px;' onerror="this.style.display='none'">
                     </a>
                 </div>
                 <p><strong>📝 Caption:</strong> {caption_text}</p>
@@ -100,6 +101,6 @@ if handle:
                 <p><a href='{video_url}' target='_blank'>🔗 View Reel</a></p>
             </div>
             """
-            components.html(html, height=700)
+            components.html(html, height=200, scrolling=False)
     else:
         st.warning("No reels found.")

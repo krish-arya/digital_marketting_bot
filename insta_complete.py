@@ -45,7 +45,6 @@ def format_timestamp(ts):
     except:
         return "Unknown"
 
-# ========== DISPLAY ==========
 if handle:
     with st.spinner("Fetching profile and reels..."):
         profile = fetch_profile(handle)

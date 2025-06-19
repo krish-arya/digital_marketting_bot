@@ -178,4 +178,3 @@ elif tab == "Instagram Viewer":
                 components.html(html, height=400)
         else:
             st.warning("No reels found or failed to load reels.")
-
